@@ -120,7 +120,7 @@ function getAverage(marks){
 }
 
 /* Puzzle #7
-
+Write a function will check number and return Odd or Even 
 */
 
 const even_or_odd = n => (n % 2) ? 'Odd' : 'Even';
@@ -131,4 +131,19 @@ const even_or_odd = function(number) {
   return number %2 == 0 ? "Even" : "Odd";
 }
 
+/*Puzzle #8
+Very simple, given a number, find its opposite.
+*/
+
+function opposite(number) {
+  return number - (number*2);
+ }
+//or
+ const opposite = number => -number;
+
+ //or
+
+ function opposite(number){
+   return - number;
+ }
 

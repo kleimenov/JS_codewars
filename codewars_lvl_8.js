@@ -119,5 +119,16 @@ function getAverage(marks){
   return Math.floor(marks.reduce((sum, x) => sum + x) / marks.length);
 }
 
+/* Puzzle #7
+
+*/
+
+const even_or_odd = n => (n % 2) ? 'Odd' : 'Even';
+
+//or
+
+const even_or_odd = function(number) {
+  return number %2 == 0 ? "Even" : "Odd";
+}
 
 

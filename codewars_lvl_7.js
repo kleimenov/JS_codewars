@@ -118,5 +118,46 @@ function disemvowel(str) {
 }
 
 
+/*
+Puzzle #5
+There are some apples that you want to give out as a present. 
+You are going to distribute them between some gift boxes in such 
+a way that all the boxes will contain an equal number of apples. 
+You can leave out some of the apples, but no more than maxResidue. 
+You also don't want to leave out more apples than necessary; that is, 
+if each box contains x apples, the number of left out apples should be less than x.
+Assume that you have an infinite number of gift boxes, and that all of them have 
+the capacity of boxCapacity. In how many ways can you distribute the apples satisfying 
+all of the above conditions?
+*/
+
+function applesDistribution(apples, boxCapacity, maxResidue) {
+  let combinationOne = 0;
+  let cnt = 1;
+  while(cnt <= boxCapacity) {
+      console.log("number of apples in the box "+ cnt);
+      if(apples%cnt === 0 || apples%cnt <= maxResidue ){
+          console.log(apples%cnt);
+          combinationOne ++;
+      }
+     cnt++;
+  }
+  return combinationOne;
+  
+}
+
+console.log(applesDistribution(50,20,2))
+
+
+// or (it isn't my solutions)
+function applesDistribution(apples, boxCapacity, maxResidue) {
+  return Array.from({length: boxCapacity}, (_, i) => i + 1).filter(x => apples % x <= maxResidue).length}
+
+// or (it isn't my solutions)
+
+
+
+
+
 
 

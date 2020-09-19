@@ -1,3 +1,4 @@
+
 /*
 Quiz #1
 
@@ -153,9 +154,35 @@ console.log(applesDistribution(50,20,2))
 function applesDistribution(apples, boxCapacity, maxResidue) {
   return Array.from({length: boxCapacity}, (_, i) => i + 1).filter(x => apples % x <= maxResidue).length}
 
-// or (it isn't my solutions)
+/*
+Puzzle #6
 
+*/
 
+let a = 17; //-466;
+let b= 17; //-217;
+
+function getSum( a,b ){
+    let sum = 0;
+    if(a < b || a <= 0){
+        for(let i = a; i <= b; i++){sum +=i;} 
+    }
+    if(a > b) {
+        for(let i = a; i >= b; i--){sum +=i;}
+    }
+    if(a === b) {sum = a};
+    return sum;
+  }
+
+  // or (it isn't my solution)
+
+  const getSum = (a, b) => {
+    let min = Math.min(a, b),
+        max = Math.max(a, b);
+    return (max - min + 1) * (min + max) / 2;
+  }
+
+  console.log(getSum(a,b));
 
 
 

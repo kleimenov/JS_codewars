@@ -25,6 +25,14 @@ function getMean(arr, x, y) {
     }
     return -1;
 }
+
+/*
+const getMean = (arr, x, y) =>
+  x <= 1 || y <= 1 || x > arr.length || y > arr.length ? -1 :
+  (arr.slice(0, x).reduce((pre, val) => pre + val) / x + arr.slice(-y).reduce((pre, val) => pre + val) / y) / 2;
+
+*/
+
 const result = getMean(array, x, y);
 console.log(result)
 

@@ -1,4 +1,3 @@
-
 /*
 Quiz #1
 
@@ -9,14 +8,14 @@ How many years does the town need to see its population greater or equal to p in
 */
 
 function nbYear(p0, percent, aug, p) {
-    percent = percent/100;
-    let cnt = 0;
-    let newPopulation = p0;
-    while (newPopulation < p) {
-      newPopulation = newPopulation + (newPopulation * percent) + aug;
-      ++cnt;
-    }
-    return cnt;
+  percent = percent / 100;
+  let cnt = 0;
+  let newPopulation = p0;
+  while (newPopulation < p) {
+    newPopulation = newPopulation + newPopulation * percent + aug;
+    ++cnt;
+  }
+  return cnt;
 }
 
 /*
@@ -35,16 +34,18 @@ function accum(s) {
       newS += s[i].toLowerCase();
     }
     newS += "-";
-}
-  return newS.slice(0,newS.length-1);
+  }
+  return newS.slice(0, newS.length - 1);
 }
 
-//or 
+//or
 
 function accum(s) {
-  return s.split('').map((c, i) => (c.toUpperCase() + c.toLowerCase().repeat(i))).join('-');
+  return s
+    .split("")
+    .map((c, i) => c.toUpperCase() + c.toLowerCase().repeat(i))
+    .join("-");
 }
-
 
 /*
 Quiz #3
@@ -55,11 +56,11 @@ For example, running this function on the array ['i', 'have','no','space']
 would produce ['i','ihave','ihaveno','ihavenospace'].
 */
 
-function spacey(array){
+function spacey(array) {
   for (var i = 1; i < array.length; ++i) {
-    array[i] = array[i-1] + array[i];
-}
-  return array
+    array[i] = array[i - 1] + array[i];
+  }
+  return array;
 }
 
 /*
@@ -75,34 +76,28 @@ Kata.getMiddle("middle") should return "dd"
 Kata.getMiddle("A") should return "A"
 */
 
-function getMiddle(s)
-  {
-    let evenNumber = 0;
-    let oddNumber = 0;
-    let middleLetters ="";
-    if (s.length <= 1) {
-      middleLetters = s;
-    }
-    else if (s.length%2 === 0) {
-      evenNumber = s.length/2;
-      middleLetters = s[evenNumber-1] + s[evenNumber];
-    }
-    else {
-      oddNumber = Math.floor(s.length/2);
-      middleLetters = s[oddNumber];
-    }
-    
-    return middleLetters;
+function getMiddle(s) {
+  let evenNumber = 0;
+  let oddNumber = 0;
+  let middleLetters = "";
+  if (s.length <= 1) {
+    middleLetters = s;
+  } else if (s.length % 2 === 0) {
+    evenNumber = s.length / 2;
+    middleLetters = s[evenNumber - 1] + s[evenNumber];
+  } else {
+    oddNumber = Math.floor(s.length / 2);
+    middleLetters = s[oddNumber];
   }
 
+  return middleLetters;
+}
 
 // or
 
-function getMiddle(s)
-{
+function getMiddle(s) {
   return s.substr(Math.ceil(s.length / 2 - 1), s.length % 2 === 0 ? 2 : 1);
 }
-
 
 /*
 Quiz #4
@@ -115,9 +110,8 @@ Note: for this kata y isn't considered a vowel.
 */
 
 function disemvowel(str) {
-  return str.replace(/[aeiou]/gi,'');
+  return str.replace(/[aeiou]/gi, "");
 }
-
 
 /*
 Puzzle #5
@@ -135,24 +129,25 @@ all of the above conditions?
 function applesDistribution(apples, boxCapacity, maxResidue) {
   let combinationOne = 0;
   let cnt = 1;
-  while(cnt <= boxCapacity) {
-      console.log("number of apples in the box "+ cnt);
-      if(apples%cnt === 0 || apples%cnt <= maxResidue ){
-          console.log(apples%cnt);
-          combinationOne ++;
-      }
-     cnt++;
+  while (cnt <= boxCapacity) {
+    console.log("number of apples in the box " + cnt);
+    if (apples % cnt === 0 || apples % cnt <= maxResidue) {
+      console.log(apples % cnt);
+      combinationOne++;
+    }
+    cnt++;
   }
   return combinationOne;
-  
 }
 
-console.log(applesDistribution(50,20,2))
-
+console.log(applesDistribution(50, 20, 2));
 
 // or (it isn't my solutions)
 function applesDistribution(apples, boxCapacity, maxResidue) {
-  return Array.from({length: boxCapacity}, (_, i) => i + 1).filter(x => apples % x <= maxResidue).length}
+  return Array.from({ length: boxCapacity }, (_, i) => i + 1).filter(
+    (x) => apples % x <= maxResidue
+  ).length;
+}
 
 /*
 Puzzle #6
@@ -160,31 +155,32 @@ Puzzle #6
 */
 
 let a = 17; //-466;
-let b= 17; //-217;
+let b = 17; //-217;
 
-function getSum( a,b ){
-    let sum = 0;
-    if(a < b || a <= 0){
-        for(let i = a; i <= b; i++){sum +=i;} 
+function getSum(a, b) {
+  let sum = 0;
+  if (a < b || a <= 0) {
+    for (let i = a; i <= b; i++) {
+      sum += i;
     }
-    if(a > b) {
-        for(let i = a; i >= b; i--){sum +=i;}
+  }
+  if (a > b) {
+    for (let i = a; i >= b; i--) {
+      sum += i;
     }
-    if(a === b) {sum = a};
-    return sum;
   }
-
-  // or (it isn't my solution)
-
-  const getSum = (a, b) => {
-    let min = Math.min(a, b),
-        max = Math.max(a, b);
-    return (max - min + 1) * (min + max) / 2;
+  if (a === b) {
+    sum = a;
   }
+  return sum;
+}
 
-  console.log(getSum(a,b));
+// or (it isn't my solution)
 
+const getSum = (a, b) => {
+  let min = Math.min(a, b),
+    max = Math.max(a, b);
+  return ((max - min + 1) * (min + max)) / 2;
+};
 
-
-
-
+console.log(getSum(a, b));

@@ -20,7 +20,7 @@ function(array, index, newItem) {
 
 }
 */
-
+/*
 let array = [1, 3, 4, 5, 7];
 
 const findOutlier = (array) => {
@@ -39,3 +39,28 @@ const findOutlier = (array) => {
 }
 
 console.log(findOutlier(array))
+*/
+
+let number = 10;
+
+const result = number.toString(2);
+let decimalArray = result.split("");
+let sumBinary = 0;
+for (let i = 0; i < decimalArray.length; i++) {
+  decimalArray[i] = parseInt(decimalArray[i]);
+  sumBinary += decimalArray[i];
+}
+console.log(sumBinary);
+
+var countBits = function (n) {
+  let decimalArray=[]
+  for (let i = 0; i < n; i++) {
+    decimalArray.push(parseInt(decimalArray[i]));
+  }
+  for (let i = 0; i < decimalArray.length; i++) {
+    sumBinary += decimalArray[i];
+  }
+  return sumBinary;
+}
+
+countBits(number)

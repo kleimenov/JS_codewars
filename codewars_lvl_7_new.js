@@ -43,6 +43,10 @@ let text = 'loopingisfunbutdangerous'
 let text2 = 'lessdangerousthancoding'
 
 
+let text3 = [1,2,3,4,5]
+let text4 = [1,2,3,4,5,4,5,7,8,9,1,2,3]
+
+
 /*
 var sortAlphabets = function(text) {
     return text.split('').sort().join('');
@@ -60,8 +64,8 @@ function longest(s1, s2) {
     return newString.split('').sort().filter(function(item, i, arr){return arr.indexOf(item)==i}).join('');
    }
   
-  console.log(longest(text, text2))
+//console.log(longest(text, text2))
 
   //
 
-  const longest = (s1, s2) => [...new Set(s1+s2)].sort().join('')
+//const longest = (s1, s2) => [...new Set(s1+s2)].sort().join('')

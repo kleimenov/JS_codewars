@@ -43,8 +43,8 @@ let text = 'loopingisfunbutdangerous'
 let text2 = 'lessdangerousthancoding'
 
 
-let text3 = [1,2,3,4,5]
-let text4 = [1,2,3,4,5,4,5,7,8,9,1,2,3]
+
+let text4 = [1,2,3,4,5]
 
 
 /*
@@ -69,3 +69,8 @@ function longest(s1, s2) {
   //
 
 //const longest = (s1, s2) => [...new Set(s1+s2)].sort().join('')
+
+const arrt = []
+text4.filter((number,arrt)=> arrt.(number + 1))
+
+console.log(arrt)

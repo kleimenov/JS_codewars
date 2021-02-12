@@ -97,7 +97,7 @@ function likes(names) {
 */
 
 //
-
+/*
 function likes(names) {
   return {
     0: 'no one likes this',
@@ -109,4 +109,25 @@ function likes(names) {
 }
 
 console.log(likes(likes5))
+*/
 
+
+var uniqueInOrder=function(variable){
+  //your code here - remember iterable can be a string or an array
+}
+
+let variable1 = 'AAAABBBCCDAABBB';
+let variable = [1,2,3,4,2]
+
+//console.log(variable.split('').sort().filter((item, i, arr)=> arr.indexOf(item)==i))
+//console.log(array.sort().filter((item, i, arr)=> arr.indexOf(item)==i))
+
+function unique(variable) {
+
+  if(Array.isArray(variable)) {
+    return  variable.sort().filter((item, i, arr)=> arr.indexOf(item)==i)
+  } 
+  return variable.split('').sort().filter((item, i, arr)=> arr.indexOf(item)==i);
+}
+
+console.log(unique(variable))
